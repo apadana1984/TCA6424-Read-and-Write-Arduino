@@ -25,7 +25,7 @@ void setup() {
   // 2: Send the Command Byte
   Wire.write(CONFIG_P0); // choosing P0 configuration register to write to
   // 3: Send the Data
-  Wire.write(0xF3); // Set Pin 2 and 3 as output ports (set to zero), and Pins 1-2 and 4-7 as input ports (set to one)
+  Wire.write(0xF3); // Set Pin 2 and 3 as output ports (set to zero), and Pins 0-1 and 4-7 as input ports (set to one)
   // Execute the Sequence
   Wire.endTransmission();
    /******** FINISHED WRITE SEQUENCE **********/
