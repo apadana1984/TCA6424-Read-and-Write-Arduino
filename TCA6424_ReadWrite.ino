@@ -5,8 +5,8 @@
  * 
  * This is a demo for TCA6424 I2C port expander. The IC is on a Texas Instrument IO Expander EVM.
  * This sketch does not use the INT signal. Check the repository for other sketches with the interrupt signal.
- * Instead of reading the interrupt signal, it reads the input ports P00 and P01 (Two push buttons) every millisecond and maps them directly to the 
- * LED ports (P02 and P03)
+ * Instead of reading the interrupt signal, it reads the input ports P00 and P01 (Two push buttons) every millisecond and maps them
+ * directly to the LED ports (P02 and P03)
  */
 
 #include <Wire.h>
