@@ -5,7 +5,7 @@
  * 
  * This is a demo for TCA6424 I2C port expander. The IC is on a Texas Instrument IO Expander EVM.
  * This sketch does not use the INT signal. Check the repository for other sketches with the interrupt signal.
- * Instead of reading the interrupt signal, it reads the input ports P00 and P01 (Two push buttons) every millisecond and maps them
+ * Instead of reading the interrupt signal, it reads the input ports P00 and P01 (Two push buttons) every ten millisecond and maps them
  * directly to the LED ports (P02 and P03)
  */
 
@@ -44,6 +44,7 @@ void loop() {
   Wire.requestFrom(TCA6424_I2C_ADDR,1);
   // 4: Read the Register
   unsigned int c = Wire.read(); // Set Pin 2 and 3 as output ports (set to zero), and Pins 0-1 and 4-7 as input ports (set to one)
+  // Serial.println(c&0x03,HEX); // only monitors the first two bits
   // Execute the Sequence
   Wire.endTransmission();
   /* Display on the serial port */
@@ -58,5 +59,5 @@ void loop() {
   Wire.write((byte)((c&0x03)<<2)); // Change the LED status based on the push buttons value
   // Execute the Sequence
   Wire.endTransmission();
-  delay(1);
+  delay(10);
 }
