@@ -43,7 +43,7 @@ void loop() {
   // 3: Send the Slave Address (I2C Address of the IO Expansion Board)
   Wire.requestFrom(TCA6424_I2C_ADDR,1);
   // 4: Read the Register
-  unsigned int c = Wire.read(); // Set Pin and 3 as output ports (set to zero), and Pins 1-2 and 4-7 as input ports (set to one)
+  unsigned int c = Wire.read(); // Set Pin 2 and 3 as output ports (set to zero), and Pins 0-1 and 4-7 as input ports (set to one)
   // Execute the Sequence
   Wire.endTransmission();
   /* Display on the serial port */
